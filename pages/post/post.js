@@ -1,3 +1,5 @@
+import initCategoryScroll from "../../scripts/categoryScroll.js"
+
 export default function initPost() {
 	const getPost = () => {
 		const postId = JSON.parse(localStorage.getItem("post-id"));
@@ -54,6 +56,7 @@ export default function initPost() {
 		`;
 		}
 		setCategory();
+		initCategoryScroll()
 	};
 	renderPost();
 

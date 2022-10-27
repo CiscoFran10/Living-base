@@ -1,4 +1,5 @@
 @use "../../scss/fonts";
+@use "../../scss/mobile";
 
 .logo {
 	@include fonts.font-2-b;
@@ -21,6 +22,11 @@
 	gap: 130px;
 	grid-template-columns: 1fr 1fr;
 
+	@include mobile.d(t) {
+		grid-template-columns: 1fr;
+		gap: 40px;
+	}
+
 	.description {
 		display: grid;
 		gap: 24px;
@@ -35,6 +41,11 @@
 
 			& strong {
 				color: var(--color-brand-100);
+			}
+
+			@include mobile.d(t) {
+				max-width: 100%;
+				@include fonts.font-2-b;
 			}
 		}
 
@@ -52,11 +63,18 @@
 	.image {
 		border-radius: 0 60px;
 		overflow: hidden;
+
+		& img {
+			@include mobile.d(t) {
+				height: 200px;
+				width: 100%;
+			}
+		}
 	}
 }
 
 .categories {
-	margin: 100px 0 70px 0;
+	margin: 100px 0px 70px 0;
 	position: relative;
 }
 
@@ -93,23 +111,35 @@
 
 .prev {
 	transform: scaleX(-1);
-	left: -50px;
+	left: -46px;
+
+	@include mobile.d(t) {
+		display: none;
+	}
 }
 
 .next {
 	right: 0px;
 	display: block;
+
+	@include mobile.d(t) {
+		display: none;
+	}
 }
 
 #posts {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 	gap: 90px 44px;
 }
 
 .post {
 	display: grid;
 	gap: 16px;
+
+	@include mobile.d(m) {
+		gap: 20px;
+	}
 
 	.post-image img {
 		height: 170px;
@@ -119,9 +149,17 @@
 
 	h2 {
 		@include fonts.font-3-sb;
+
+		@include mobile.d(m) {
+			@include fonts.font-4-sb;
+		}
 	}
 	p {
 		@include fonts.font-4-r;
+
+		@include mobile.d(m) {
+			font-size: 0.875rem;
+		}
 	}
 
 	button {
@@ -145,6 +183,24 @@ footer {
 		display: flex;
 		gap: 50px;
 		align-items: center;
+
+		@include mobile.d(t) {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+
+			.logo {
+				grid-column: 1;
+			}
+
+			p {
+				grid-column: 1;
+			}
+		}
+
+		@include mobile.d(m) {
+			display: grid;
+			grid-template-columns: 1fr;
+		}
 	}
 
 	.logo {

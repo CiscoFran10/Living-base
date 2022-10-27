@@ -1,4 +1,5 @@
 @use "../../scss/fonts";
+@use "../../scss/mobile";
 
 header {
 	display: flex;
@@ -14,11 +15,19 @@ header {
 		max-width: 45ch;
 		@include fonts.font-1-sb;
 		margin-bottom: 32px;
+
+		@include mobile.d(m) {
+			@include fonts.font-2-b;
+		}
 	}
 
 	p {
 		color: var(--color-grey-200);
 		@include fonts.font-4-r;
+
+		@include mobile.d(m) {
+			font-size: 0.875rem;
+		}
 	}
 }
 
@@ -33,5 +42,9 @@ header {
 		line-height: 1.5rem;
 		color: var(--color-grey-200);
 		@include fonts.font-4-r;
+
+		@include mobile.d(m) {
+			font-size: 0.875rem;
+		}
 	}
 }

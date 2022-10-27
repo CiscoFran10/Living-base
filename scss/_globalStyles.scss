@@ -1,3 +1,5 @@
+@use "./mobile";
+
 * {
 	box-sizing: border-box;
 	margin: 0;
@@ -52,5 +54,9 @@ p {
 .container {
 	max-width: 1200px;
 	margin: 0 auto;
-	padding: 70px 15px;
+	padding: 4.375rem 2.8rem;
+
+	@include mobile.d(m) {
+		padding: 4.375rem 1rem;
+	}
 }

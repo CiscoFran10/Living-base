@@ -9,7 +9,7 @@ export default function initCategoryScroll() {
 				scrollBtns[0].style.display = "block";
 			} else {
 				categoriesDiv.scrollBy(-200, 0);
-				scrollBtns[1].style.display = "block";
+				
 			}
 		}
 
